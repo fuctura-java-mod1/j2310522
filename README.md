@@ -1,4 +1,4 @@
-# Atividade 1
+# Atividade 1 - Gerando Arquivos JAR
 
 1 -   Crie um novo projeto Java chamado: MeuArquivoJar
 
@@ -22,3 +22,8 @@
 # Utilize o vídeo abaixo como referência em caso de dúvidas
 
 https://drive.google.com/file/d/14LId6q14mET7tln1YrdspRFrRcO8GWcK/view?usp=sharing
+
+
+# Dica de leitura complementar:
+
+https://pt.wikipedia.org/wiki/JAR_(formato_de_arquivo)
