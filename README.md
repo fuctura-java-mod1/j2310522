@@ -1,4 +1,4 @@
-# Atividade 1 - Gerando Arquivos JAR
+# Atividade 1 - Gerando Arquivos JAR utilizando o Eclipse
 
 1 -   Crie um novo projeto Java chamado: MeuArquivoJar
 
