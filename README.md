@@ -9,8 +9,7 @@
 
 # Modelagem:
 
-
-![V1](https://ibb.co/2gB7vjG)
+<a href="https://ibb.co/2gB7vjG"><img src="https://i.ibb.co/2gB7vjG/image.png" alt="image" border="0"></a>
 
 # Utilizando API JDBC para Conectar-se ao SGBD:
 
