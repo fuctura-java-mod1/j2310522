@@ -7,7 +7,10 @@
 - Criação do script para gerar as tabelas
 - Primeiro contato com a API do JDBC
 
-#
+# Modelagem:
+
+
+![V1](https://ibb.co/2gB7vjG)
 
 # Utilizando API JDBC para Conectar-se ao SGBD:
 
