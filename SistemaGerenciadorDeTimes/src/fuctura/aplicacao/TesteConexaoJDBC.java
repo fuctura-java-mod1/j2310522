@@ -7,14 +7,16 @@ import java.sql.SQLException;
 public class TesteConexaoJDBC {
 	
 	public static void main(String[] args) { //veja se tem algo 
-		String url = "";
-		String usuario = "";
-		String senha = "";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String usuario = "java2";
+		String senha = "123";
 		
 		try {
 			Connection c = DriverManager.getConnection(url, usuario, senha);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println("Conectado com sucesso!");
 	}
 }
