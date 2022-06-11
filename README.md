@@ -12,7 +12,7 @@ Foi especificado que para ser uma calculadora do tipo FucturaCal é necessário 
 - int dividir(int a, int b)
 - int raizQuadrada(int a)
 
-## Atividade
+## Atividade 2.1
 
 - **Crie um novo projeto Java**
 - **Crie uma classe chamada SeuNomeSobrenomeCalculadora**
@@ -34,4 +34,22 @@ Clique no botão do lado esquerdo e escolha: **add unimplemented methods.**
 
 - **Para finalizar empacote seu projeto em um arquivo JAR e envie no grupo.**
 
-### Se tiver difuldades você pode solicitar o gabarito utilizando o link abaixo:
+### Se tiver difuldades você pode visualizar o gabarito utilizando o link abaixo: https://drive.google.com/file/d/1f0XmGYfdrz-jcOx3BuofBVFJijW2USma/view?usp=sharing
+
+## Atividade 2.2
+
+Podemos salvar dados na nossa tabela através do comando **insert**, por exemplo:
+
+```sql
+    --cria a tabela clube
+    create table clube(nome varchar(255), nmPresidente varchar(255), dtFundacao varchar(10),site varchar(255));
+    
+    --salva 1 clube na tabela
+    insert into clube values('Sport Clube do Recife', 'Leonardo Lopes', '13/05/1905', 'https://sportrecife.com.br/');
+```
+
+- Crie um script de povoamento que insere: 2 jogadores e 2 clubes
+- Salve o script no formato: nomeSobrenome.sql
+- Envie no grupo o seu script
+
+### Se tiver difuldades você pode consultar o arquivo: gabarito.sql
