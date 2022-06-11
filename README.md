@@ -1,33 +1,37 @@
-# j2310522 - Repositório da Turma de Java 2 - 31/05/22
+# Atividade 2
 
-# Aula 2
+## Especificação da Calculadora Fuctura
 
-- Criação do projeto SistemaGerenciadorDeTimes
-- Criação das entidades (Classes Java)
-- Criação do script para gerar as tabelas
-- Primeiro contato com a API do JDBC
+Nesta atividade vocês deve implementar uma especificação de uma calculadora chamada CalculadoraSpec.
 
-# Modelagem:
+Foi especificado que para ser uma calculadora do tipo FucturaCal é necessário os seguintes métodos:
 
-<a href="https://ibb.co/2gB7vjG"><img src="https://i.ibb.co/2gB7vjG/image.png" alt="image" border="0"></a>
+- int somar(int a, int b)
+- int substrair(int a, int b)
+- int multiplicar(int a, int b)
+- int dividir(int a, int b)
+- int raizQuadrada(int a)
 
-# Utilizando API JDBC para Conectar-se ao SGBD:
+## Atividade
+
+- **Crie um novo projeto Java**
+- **Crie uma classe chamada SeuNomeSobrenomeCalculadora**
+- **Implemente a interface br.com.fuctura.CalculadoraSpec disponível no arquivo fucturaCalc.jar**
+
+Para implementar uma interface você deve utilizar a palavra **implements**, por exemplo:
 
 ```java
-	public static void main(String[] args) { 
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String usuario = "MUDE-ME";
-		String senha = "MUDE-ME";
-		
-		try {
-			Connection c = DriverManager.getConnection(url, usuario, senha);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println("Conectado com sucesso!");
-	}
+    public SeuNomeSobrenomeCalculadora implements CalculadoraSpec {
+
+    }
 ```
 
-# Referências:
-- [Baixar Driver do Oracle XE](https://www.oracle.com/database/technologies/appdev/jdbc.html")
+O Eclipse irá informar que você precisa definir alguns métodos não implementados (sua classe ficará sublinhada).
+
+Clique no botão do lado esquerdo e escolha: **add unimplemented methods.**
+
+- **Implemente as 5 operações matemáticas solicitadas.**
+
+- **Para finalizar empacote seu projeto em um arquivo JAR e envie no grupo.**
+
+### Se tiver difuldades você pode solicitar o gabarito utilizando o link abaixo:
