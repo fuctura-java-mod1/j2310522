@@ -21,6 +21,7 @@ public class TesteConexaoJDBC {
 			Connection conexao = DriverManager.getConnection(url, usuario, senha);
 			
 			Jogador j = new Jogador();
+			j.setCodigo(1);
 			j.setNome("Messi");
 			j.setAltura(1.90);
 			
@@ -50,14 +51,15 @@ public class TesteConexaoJDBC {
 	
 	public static void inserirComPreparedStatement(Connection conexao, Jogador j) {
 		try {
-			                                               //1, 2  3  4
-			String comandoSql = "INSERT INTO jogador VALUES (?, ?, ?, ?)";
+			                                               //1, 2  3  4, 5
+			String comandoSql = "INSERT INTO jogador VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement psmt = conexao.prepareStatement(comandoSql);
 				
-			psmt.setInt(4, j.getIdade());
-			psmt.setString(1, j.getNome()); 
-			psmt.setDouble(3, j.getPeso());
-			psmt.setDouble(2, j.getAltura());
+			psmt.setInt(1, j.getCodigo());
+			psmt.setString(2, j.getNome()); 
+			psmt.setDouble(3, j.getAltura());
+			psmt.setDouble(4, j.getPeso());
+			psmt.setInt(5, j.getIdade());
 			
 			psmt.execute();
 			

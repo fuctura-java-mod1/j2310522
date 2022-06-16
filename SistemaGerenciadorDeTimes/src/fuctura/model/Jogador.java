@@ -1,10 +1,18 @@
 package fuctura.model;
 
 public class Jogador {
+	private int codigo;
 	private String nome;
 	private int idade;
 	private double peso;
 	private double altura;
+	
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 	public String getNome() {
 		return nome;
 	}
