@@ -1,6 +1,6 @@
 package fuctura.model;
 
-public class Jogador {
+public class Jogador implements Entidade {
 	private int codigo;
 	private String nome;
 	private int idade;
@@ -37,8 +37,4 @@ public class Jogador {
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-	
-	//getter e setter
-
-
 }
