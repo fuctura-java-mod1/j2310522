@@ -36,7 +36,7 @@ public class TesteConexaoComHibernate {
 			t1.setNome("Felipao");
 			
 			Tecnico t2 = new Tecnico();
-			t2.setCodigo(1);
+			t2.setCodigo(2);
 			t2.setNome("Zagalo");
 			
 			
