@@ -1,0 +1,10 @@
+drop table jogador;
+
+create table jogador(
+ cod int,
+ nome varchar(255),
+ altura float,
+ peso float,
+ idade int,
+ constraints jogador_pk primary key(cod)
+);
