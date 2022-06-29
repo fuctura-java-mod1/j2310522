@@ -16,7 +16,9 @@ public class Jogador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer codigo;
+	
 	private Double altura;
+	
 	@Column(name = "nome_jogador", nullable = false, length = 20)
 	private String nome;
 	public Integer getCodigo() {

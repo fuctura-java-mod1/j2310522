@@ -22,4 +22,5 @@ public class Tecnico {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 }
