@@ -16,4 +16,9 @@ public class JPAUtil {
 
 		return fabrica;
 	}
+	
+	public static void closeFabrica() {
+		fabrica.close();;
+	}
+	
 }

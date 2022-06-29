@@ -8,6 +8,8 @@ import br.com.fuctura.util.JPAUtil;
 
 public class JogadorRepository {
 
+	
+	
 	public void create(Jogador j) {
 		EntityManager em = JPAUtil.getFabrica().createEntityManager();
 		EntityTransaction tx = em.getTransaction();// inserir, excluir e atualizar
@@ -21,7 +23,7 @@ public class JogadorRepository {
 	public Jogador read(Jogador j) {
 		EntityManager em = JPAUtil.getFabrica().createEntityManager();;
 		//READ - CONSULTAR
-		Jogador resultadoDaConsulta = em.find(Jogador.class, 1);
+		Jogador resultadoDaConsulta = em.find(Jogador.class, 1); //SEMPRE VAI EXCLUIR O MESMO
 		return resultadoDaConsulta;
 	}
 
@@ -35,11 +37,14 @@ public class JogadorRepository {
 	}
 
 	public void delete(Jogador j) {
-		EntityManager em = null;
+		EntityManager em = JPAUtil.getFabrica().createEntityManager();
+		
+		Jogador jogadorGerenciado = read(j);
+		
 		EntityTransaction tx = em.getTransaction();// inserir, excluir e atualizar
 		// DELETE - Remover o registro
 		tx.begin();
-		em.remove(j);
+		em.remove(jogadorGerenciado);
 		tx.commit();
 	}
 

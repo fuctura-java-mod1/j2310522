@@ -1,13 +1,8 @@
 package br.com.fuctura;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 import br.com.fuctura.entity.Jogador;
-import br.com.fuctura.entity.Tecnico;
 import br.com.fuctura.repository.JogadorRepository;
+import br.com.fuctura.util.JPAUtil;
 
 public class TesteConexaoComHibernate {
 
@@ -29,9 +24,9 @@ public class TesteConexaoComHibernate {
 		
 		
 		
+		r.delete(j);
 		
-		
-		
-		
+		System.out.println("Finalizando aplicacao");
+		JPAUtil.closeFabrica();
 	}
 }
