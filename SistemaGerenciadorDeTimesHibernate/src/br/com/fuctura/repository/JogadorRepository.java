@@ -1,14 +1,17 @@
 package br.com.fuctura.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
 import br.com.fuctura.entity.Jogador;
 import br.com.fuctura.util.JPAUtil;
 
 public class JogadorRepository {
-
 	
+	public JogadorRepository() {}
 	
 	public void create(Jogador j) {
 		EntityManager em = JPAUtil.getFabrica().createEntityManager();
@@ -47,5 +50,16 @@ public class JogadorRepository {
 		em.remove(jogadorGerenciado);
 		tx.commit();
 	}
-
+	
+	public List<Jogador> findByNome(String nome){
+		EntityManager em = JPAUtil.getFabrica().createEntityManager();
+		
+		TypedQuery<Jogador> consulta = em.createQuery("from Jogador where nome like :nome", Jogador.class);
+		consulta.setParameter("nome", nome);
+		
+		List<Jogador> resultadoConsulta = consulta.getResultList();
+		
+		return resultadoConsulta;
+	}
+	
 }
