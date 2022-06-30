@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
 
 import br.com.fuctura.entity.Jogador;
 import br.com.fuctura.util.JPAUtil;
@@ -51,15 +51,16 @@ public class JogadorRepository {
 		tx.commit();
 	}
 	
-	public List<Jogador> findByNome(String nome){
+	//findBy = busque por -> padrao do Spring
+	public List<Jogador> findByNome(String nomeParametro) {
 		EntityManager em = JPAUtil.getFabrica().createEntityManager();
-		
-		TypedQuery<Jogador> consulta = em.createQuery("from Jogador where nome like :nome", Jogador.class);
-		consulta.setParameter("nome", nome);
-		
-		List<Jogador> resultadoConsulta = consulta.getResultList();
-		
-		return resultadoConsulta;
-	}
 	
+		Query q = em.createNamedQuery("Andre");
+		
+		q.setParameter("parametro", nomeParametro);
+		
+		List<Jogador> resultaDaConsulta = q.getResultList();
+		
+		return resultaDaConsulta;
+	}
 }

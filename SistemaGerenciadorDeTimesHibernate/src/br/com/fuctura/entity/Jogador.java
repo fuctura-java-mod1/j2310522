@@ -7,11 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_jogador")
+@NamedQueries({
+	@NamedQuery( 
+			name = "Andre", 
+			query = "SELECT j FROM Jogador j WHERE j.nome = :parametro"
+			)
+})
+
 public class Jogador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
