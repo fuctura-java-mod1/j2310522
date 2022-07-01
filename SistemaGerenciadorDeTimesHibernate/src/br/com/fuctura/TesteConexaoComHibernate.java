@@ -3,6 +3,7 @@ package br.com.fuctura;
 import java.util.List;
 import java.util.Scanner;
 
+import br.com.fuctura.dto.JogadorNomeAlturaDTO;
 import br.com.fuctura.entity.Jogador;
 import br.com.fuctura.repository.JogadorRepository;
 import br.com.fuctura.util.JPAUtil;
@@ -29,7 +30,7 @@ public class TesteConexaoComHibernate {
 				String nome = leituraEntrada.nextLine();
 				System.out.println("Digite a altura do Jogador: ");
 				String altura = leituraEntrada.nextLine();
-					
+
 				Jogador jogador = new Jogador();
 				jogador.setNome(nome);
 				jogador.setAltura(Double.valueOf(altura));
@@ -39,6 +40,8 @@ public class TesteConexaoComHibernate {
 				System.out.println("Jogador Inserido Com Sucesso!");
 			} else if (opcaoSelecionada.equals("2")) {
 				System.out.println("1 - Consultar Por Nome");
+				System.out.println("2 - Consultar Por Altura e Nome");
+
 				System.out.println("Digite a opção selecionada: ");
 				opcaoSelecionada = leituraEntrada.nextLine();
 
@@ -46,18 +49,39 @@ public class TesteConexaoComHibernate {
 
 				if (opcaoSelecionada.equals("1")) {
 					System.out.println("Digite o nome do jogador: ");
-					
+
+					String nome = leituraEntrada.nextLine();
+
+					resultado = jogadorRepositorio.findByNome(nome);
+
+					if (resultado != null) {
+						System.out.println("Jogador Encontrado com sucesso:");
+						resultado.forEach(e -> System.out.println(e.toString()));
+					}
+
+					System.out.println("Fim da Consulta");
+
+				} else if (opcaoSelecionada.equals("2")) {
+					System.out.println("Digite o nome do jogador: ");
+
 					String nome = leituraEntrada.nextLine();
 					
-					resultado = jogadorRepositorio.findByNome(nome);
+					System.out.println("Digite a altura do jogador: ");
 					
-					if(resultado != null) {
+					String altura = leituraEntrada.nextLine();
+					
+					List<Object[]> resultados = jogadorRepositorio.findByNomeAndAltura(nome, Double.valueOf(altura));
+
+					List<JogadorNomeAlturaDTO> resultados2 = jogadorRepositorio.findByNomeAndAltura2(nome, Double.valueOf(altura));
+					
+					
+					if (resultados != null) {
 						System.out.println("Jogador Encontrado com sucesso:");
-						resultado.forEach( e -> System.out.println(e.toString()) );
+						resultados.forEach(e -> System.out.println(e.toString()));
 					}
-					
+
 					System.out.println("Fim da Consulta");
-					
+
 				}
 			}
 
