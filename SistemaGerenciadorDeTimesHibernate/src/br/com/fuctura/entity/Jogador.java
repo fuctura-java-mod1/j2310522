@@ -47,10 +47,18 @@ public class Jogador {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	//sobrescrever um método da classe Pai
+	@Override
+	public String toString() {
+		return "Jogador [codigo=" + codigo + ", altura=" + altura + ", nome=" + nome + "]";
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(altura, codigo, nome);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -62,9 +70,5 @@ public class Jogador {
 		Jogador other = (Jogador) obj;
 		return Objects.equals(altura, other.altura) && Objects.equals(codigo, other.codigo)
 				&& Objects.equals(nome, other.nome);
-	}
-	@Override
-	public String toString() {
-		return "Jogador [codigo=" + codigo + ", altura=" + altura + ", nome=" + nome + "]";
 	}
 }

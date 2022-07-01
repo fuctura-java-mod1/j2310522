@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.fuctura.entity.Jogador;
 import br.com.fuctura.util.JPAUtil;
@@ -62,5 +63,34 @@ public class JogadorRepository {
 		List<Jogador> resultaDaConsulta = q.getResultList();
 		
 		return resultaDaConsulta;
+	}
+	
+	
+	public List<Jogador> findByAltura(Double altura){
+		EntityManager em = JPAUtil.getFabrica().createEntityManager();
+		Query q = em.createQuery("SELECT j FROM Jogador where j.altura = :parametro");
+		
+		q.setParameter("parametro", altura);
+		
+		List<Jogador> resultadoDaConsulta = q.getResultList();
+		
+		return resultadoDaConsulta;
+	}
+	
+	public List<Jogador> findByAltura(Double min, Double max){
+		
+		EntityManager em = JPAUtil.getFabrica().createEntityManager();
+		TypedQuery<Jogador> q = em.
+				createQuery(
+						"SELECT j FROM Jogador where j.altura >= :min and j.altura <= :max",
+						Jogador.class
+						);
+
+		q.setParameter("min", min);
+		q.setParameter("max", max);
+		
+		List<Jogador> resultadoDaConsulta = q.getResultList();
+
+		return resultadoDaConsulta;
 	}
 }
