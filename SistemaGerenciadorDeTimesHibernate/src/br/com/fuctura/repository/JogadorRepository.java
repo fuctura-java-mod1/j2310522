@@ -57,7 +57,8 @@ public class JogadorRepository {
 	public List<Jogador> findByNome(String nomeParametro) {
 		EntityManager em = JPAUtil.getFabrica().createEntityManager();
 	
-		Query q = em.createNamedQuery("Andre");
+		Query q = em.createNamedQuery("Andre", Jogador.class);
+		
 		
 		q.setParameter("parametro", nomeParametro);
 		
@@ -118,18 +119,4 @@ public class JogadorRepository {
 				.setParameter("altura", altura)
 				.getResultList();
 	}
-	
-	/*
-	public List<Jogador> findByAltura(Double min, Double max){
-	EntityManager em = JPAUtil.getFabrica().createEntityManager();
-		return em.createQuery(
-						"SELECT j FROM Jogador where j.altura >= :min and j.altura <= :max",
-						Jogador.class
-						)
-		.setParameter("min", min)
-		.setParameter("max", max)
-		.getResultList();
-	}
-	*/
-	
 }
