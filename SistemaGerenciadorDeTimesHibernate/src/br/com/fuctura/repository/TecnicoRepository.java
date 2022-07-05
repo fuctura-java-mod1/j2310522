@@ -6,7 +6,7 @@ import javax.persistence.EntityTransaction;
 import br.com.fuctura.entity.Tecnico;
 import br.com.fuctura.util.JPAUtil;
 
-public class TecnicoRepositorio {
+public class TecnicoRepository implements Repository<Tecnico> {
 	
 	public void create(Tecnico t) {
 		EntityManager em = JPAUtil.getFabrica().createEntityManager();
@@ -17,6 +17,24 @@ public class TecnicoRepositorio {
 		tx.commit();
 		
 		em.close();
+	}
+
+	@Override
+	public Tecnico read(Tecnico t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Tecnico t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Tecnico t) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

@@ -59,7 +59,6 @@ public class JogadorRepository {
 	
 		Query q = em.createNamedQuery("Andre", Jogador.class);
 		
-		
 		q.setParameter("parametro", nomeParametro);
 		
 		List<Jogador> resultaDaConsulta = q.getResultList();

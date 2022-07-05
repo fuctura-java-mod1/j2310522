@@ -25,12 +25,19 @@ public class Jogador {
 	private Double peso;
 	private String nome;
 
-	@OneToOne
-	@JoinColumn(name = "clube_codigo")
-	private Clube clube;
-
+	@ManyToOne
+	private Time time;
+	
 	public Jogador() {
 
+	}
+
+	public Time getTime() {
+		return time;
+	}
+
+	public void setTime(Time time) {
+		this.time = time;
 	}
 
 	public Jogador(Double altura, Double peso, String nome) {
@@ -63,13 +70,7 @@ public class Jogador {
 		this.peso = peso;
 	}
 
-	public Clube getClube() {
-		return clube;
-	}
 
-	public void setClube(Clube clube) {
-		this.clube = clube;
-	}
 
 	public String getNome() {
 		return nome;
@@ -80,15 +81,12 @@ public class Jogador {
 	}
 
 	// sobrescrever um método da classe Pai
-	@Override
-	public String toString() {
-		return "Jogador [codigo=" + codigo + ", altura=" + altura + ", nome=" + nome + "]";
-	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(altura, codigo, nome);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -102,4 +100,12 @@ public class Jogador {
 		return Objects.equals(altura, other.altura) && Objects.equals(codigo, other.codigo)
 				&& Objects.equals(nome, other.nome);
 	}
+
+	@Override
+	public String toString() {
+		return "Jogador [codigo=" + codigo + ", altura=" + altura + ", peso=" + peso + ", nome=" + nome + ", time="
+				+ time + "]";
+	}
+	
+	
 }
