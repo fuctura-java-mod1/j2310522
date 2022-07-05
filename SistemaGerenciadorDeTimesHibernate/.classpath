@@ -24,5 +24,6 @@
 	<classpathentry kind="lib" path="libs/ojdbc8.jar"/>
 	<classpathentry kind="lib" path="libs/stax-ex-1.8.jar"/>
 	<classpathentry kind="lib" path="libs/txw2-2.3.1.jar"/>
+	<classpathentry kind="lib" path="libs/h2-2.1.214.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

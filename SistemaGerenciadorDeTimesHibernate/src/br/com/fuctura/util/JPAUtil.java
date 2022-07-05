@@ -7,7 +7,11 @@ import javax.persistence.Persistence;
 public class JPAUtil {
 
 	private static EntityManagerFactory fabrica = null;
-
+	
+	static {
+		getFabrica();
+	}
+	
 	public static EntityManagerFactory getFabrica() {
 		System.out.println("Fazendo a leitura do XML");
 		if (fabrica == null) {

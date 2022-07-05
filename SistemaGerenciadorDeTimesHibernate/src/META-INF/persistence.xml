@@ -12,31 +12,4 @@
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
 	</persistence-unit>
-	
-	<persistence-unit name="Faculdade2">
-		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.56.101:1521/xe" />
-			<property name="javax.persistence.jdbc.user" value="fuctura" />
-			<property name="javax.persistence.jdbc.password" value="123" />
-			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
-		</properties>
-	</persistence-unit>
-	
-	<persistence-unit name="Faculdade">
-	<properties>
-		<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.56.101:1521/xe" />
-		<property name="javax.persistence.jdbc.user" value="fuctura" />
-		<property name="javax.persistence.jdbc.password" value="123" />
-		<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
-		<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
-		<property name="hibernate.show_sql" value="true" />
-		<property name="hibernate.format_sql" value="true" />
-	</properties>
-</persistence-unit>
-	
 </persistence>
