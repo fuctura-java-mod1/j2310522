@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,10 +18,10 @@ public class Time {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer codigo;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Tecnico tecnico;
 	
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
 	List<Jogador> jogadores;
 
 	private String nome;
@@ -55,6 +56,14 @@ public class Time {
 
 	public void setTecnico(Tecnico tecnico) {
 		this.tecnico = tecnico;
+	}
+
+	public List<Jogador> getJogadores() {
+		return jogadores;
+	}
+
+	public void setJogadores(List<Jogador> jogadores) {
+		this.jogadores = jogadores;
 	}
 	
 	

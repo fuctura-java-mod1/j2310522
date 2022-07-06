@@ -1,12 +1,16 @@
 package br.com.fuctura.entity;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -25,9 +29,33 @@ public class Jogador {
 	private Double peso;
 	private String nome;
 
+	@Enumerated(EnumType.STRING)
+	private Posicoes posicao;
+
+	private LocalDate dataNascimento;
+
+	@Lob
+	private byte[] imagem;
+
+	public byte[] getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 	@ManyToOne
 	private Time time;
-	
+
 	public Jogador() {
 
 	}
@@ -70,8 +98,6 @@ public class Jogador {
 		this.peso = peso;
 	}
 
-
-
 	public String getNome() {
 		return nome;
 	}
@@ -87,6 +113,13 @@ public class Jogador {
 		return Objects.hash(altura, codigo, nome);
 	}
 
+	public Posicoes getPosicao() {
+		return posicao;
+	}
+
+	public void setPosicao(Posicoes posicao) {
+		this.posicao = posicao;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -106,6 +139,5 @@ public class Jogador {
 		return "Jogador [codigo=" + codigo + ", altura=" + altura + ", peso=" + peso + ", nome=" + nome + ", time="
 				+ time + "]";
 	}
-	
-	
+
 }
